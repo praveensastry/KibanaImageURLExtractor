@@ -6,6 +6,8 @@ Missing export feature for Elasticsearch on Kibana Dashboard. Install this chrom
 
 Clone the source, load the extension and refresh kibana.. kaboom! you will see this new button on kibana
 
+![alt tag](https://github.com/praveensastry/KibanaImageURLExtractor/blob/master/Images/FetchFaultyImageURL.PNG)
+
 Tested in Kibana 4.3.1 + ElasticSearch 2.1.x
 
 Tested in Kibana 4.1.x + ElasticSearch 1.7.x
