@@ -1,0 +1,52 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "name": "Extract Faulty Image URLs",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "Reads the visible logs on screen and extracts URLs to console. Also it copies the log contents to clipboard.",
+  "homepage_url": "https://agoda.com",
+  "icons": {
+    "16": "icons/agoda-icon.png",
+    "48": "icons/agoda-icon.png",
+    "128": "icons/agoda-icon.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "page": "src/bg/background.html",
+    "persistent": true
+  },
+  "browser_action": {
+    "default_icon": "icons/agoda-icon.png",
+    "default_title": "Image URL Extractor",
+    "default_popup": "src/browser_action/browser_action.html"
+  },
+  "permissions": [
+    "clipboardWrite",
+    "downloads",
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "css": [
+        "src/inject/inject.css"
+      ]
+    },
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "src/inject/inject.js",
+        "src/inject/lib/arrive.js"
+      ]
+    }
+  ]
+}
